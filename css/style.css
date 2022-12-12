@@ -15,6 +15,23 @@ main .card {
 main .card .poster {
   height: 415px;
   width: 100%;
+  position: relative;
+}
+
+.category {
+  position: absolute;
+  top: 5px;
+  right: 5px; 
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  background-color: #666669;
+  color: white;
+}
+.poster .badge {
+  position: absolute;
+  top: 5px;
+  left: 5px;
 }
 
 main .card-body {

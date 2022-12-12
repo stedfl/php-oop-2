@@ -1,19 +1,5 @@
 <?php
 require_once __DIR__ . '/db.php';
-$products_food = [];
-$products_kennel = [];
-$products_toys = [];
-foreach($products as $product) {
-  if(get_class($product ) == 'Food') {
-    $products_food [] = $product;
-  } else if ((get_class($product) == 'Kennel')) {
-    $products_kennel [] = $product;
-  } else {
-    $products_toys [] = $product;
-  }
-}
-
-
 ?>
 
 <!DOCTYPE html>
@@ -35,13 +21,22 @@ foreach($products as $product) {
   </header>
   <main>
     <div class="container">
-      <div class="row food my-5">
-        <h2>Cibo</h2>
-        <?php foreach($products_food as $product) : ?>
+      <div class="row my-5">
+        <?php foreach($products as $product) : ?>
         <div class="col mb-3">
           <div class="card" style="width: 18rem;">
             <div class="poster d-flex align-items-center">
               <img src="<?php echo $product->image ?>" class="card-img-top" alt="poster">
+              <span class="category d-flex justify-content-center align-items-center">
+                <i class="fa-solid <?php echo $product->category->icon ?>"></i>
+              </span>
+              <?php if(get_class($product) === 'Food') : ?>
+              <span class="badge text-bg-success">Cibo</span>
+              <?php elseif(get_class($product) === 'Kennel') : ?>
+              <span class="badge text-bg-warning">Cucce</span>
+              <?php else : ?>
+              <span class="badge text-bg-primary">Giochi</span>
+              <?php endif; ?>
             </div>
             <div class="card-body">
               <h5 class="card-title"><?php echo $product->name ?></h5>
@@ -62,64 +57,6 @@ foreach($products as $product) {
         </div>
         <?php endforeach; ?>
       </div>
-
-      <div class="row kennel my-5">
-        <h2>Cucce</h2>
-        <?php foreach($products_kennel as $product) : ?>
-        <div class="col mb-3">
-          <div class="card" style="width: 18rem;">
-            <div class="poster d-flex align-items-center">
-              <img src="<?php echo $product->image ?>" class="card-img-top" alt="poster">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title"><?php echo $product->name ?></h5>
-              <h6 class="brand text-secondary"><?php echo $product->brand ?></h6>
-              <p class="<?php echo ($product->is_available) ? ('available') : ('not-available'); ?>">
-              <?php echo ($product->is_available) ? ('Disponibile') : ('Non Disponibile'); ?></p>
-              <div class="pricing ">
-                <span class="final-price fs-5 me-1 fw-bold <?php echo ($product->get_price_discounted() !== $product->price) ? ('discounted') : ('not-discounted') ?>">
-                &euro;<?php  echo number_format($product->get_price_discounted(), 2, ',', '.') ?>
-                </span>
-                <?php if($product->get_price_discounted() !== $product->price) : ?>
-                <span class="price fs-5 me-1">&euro;<?php echo number_format($product->price, 2, ',', '.') ?></span>
-                <span class="discount px-2 rounded-4 me-1 fw-bold">-<?php echo $product->discount ?>%</span>
-                <?php endif; ?>
-              </div>
-            </div>
-          </div>
-        </div>
-        <?php endforeach; ?>
-      </div>
-
-
-      <row class="row toys my-5">
-        <h2>Giochi</h2>
-        <?php foreach($products_toys as $product) : ?>
-        <div class="col mb-3">
-          <div class="card" style="width: 18rem;">
-            <div class="poster d-flex align-items-center">
-              <img src="<?php echo $product->image ?>" class="card-img-top" alt="poster">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title"><?php echo $product->name ?></h5>
-              <h6 class="brand text-secondary"><?php echo $product->brand ?></h6>
-              <p class="<?php echo ($product->is_available) ? ('available') : ('not-available'); ?>">
-              <?php echo ($product->is_available) ? ('Disponibile') : ('Non Disponibile'); ?></p>
-              <div class="pricing ">
-                <span class="final-price fs-5 me-1 fw-bold <?php echo ($product->get_price_discounted() !== $product->price) ? ('discounted') : ('not-discounted') ?>">
-                &euro;<?php  echo number_format($product->get_price_discounted(), 2, ',', '.') ?>
-                </span>
-                <?php if($product->get_price_discounted() !== $product->price) : ?>
-                <span class="price fs-5 me-1">&euro;<?php echo number_format($product->price, 2, ',', '.') ?></span>
-                <span class="discount px-2 rounded-4 me-1 fw-bold">-<?php echo $product->discount ?>%</span>
-                <?php endif; ?>
-              </div>
-            </div>
-          </div>
-        </div>
-        <?php endforeach; ?>
-      </div>
-
     </div>
   </main>
 
