@@ -22,7 +22,7 @@ $product_4->set_image('https://arcaplanet.vtexassets.com/arquivos/ids/261404/sal
 $product_5 = new Food(180, 'Virtus Cat Adult Natural Tonno', 'Virtus', new Category('gatto', 'fa-solid fa-cat'), 1.99, 50, 0.150, ['Tonno 74%', 'Riso 2%', 'proteina grezza 17%', 'fibre grezze 0,1%', 'grassi grezzi 0,5%', 'ceneri grezze 0,9%', 'umidità 79%'], 'umido', 'Senior');
 $product_5->set_image('https://arcaplanet.vtexassets.com/arquivos/ids/272309/virtus-cat-nature-atlantic-formula-multipack.jpg?v=1757251984');
 
-$product_6 = new Kennel(201, 'Cuccia Rettangolare Calliope Petrolio', 'Lovedi', new Category('cane', 'fa-solid fa-dog'), 70.99, 20, new Format('XL', 84, 115, 24, ['petrolio']), false, true);
+$product_6 = new Kennel(201, 'Cuccia Rettangolare Calliope Petrolio', 'Lovedì', new Category('cane', 'fa-solid fa-dog'), 70.99, 20, new Format('XL', 84, 115, 24, ['petrolio']), false, true);
 $product_6->set_image('https://arcaplanet.vtexassets.com/arquivos/ids/269648/lovedi-cuccia-rettangolare-calliope-petrolio.jpg?v=1757034987');
 
 $product_7 = new Kennel(202, 'Cuccia Rettangolare Zig Zag', 'Luna&Teo', new Category('cane', 'fa-solid fa-dog'), 39.99, 0, new Format('S', 45, 60, 19, ['beige', 'marrone']), false, false );
@@ -34,16 +34,29 @@ $product_8->set_image('https://arcaplanet.vtexassets.com/arquivos/ids/272899/tri
 $product_9 = new Kennel(204, 'Cuccia Ciambella Pelosa Rosa', null, new Category('gatto', 'fa-solid fa-cat'), 29.90, 13, new Format('Unix', 45, null, null, ['rosa']), true, false);
 $product_9->set_image('https://arcaplanet.vtexassets.com/arquivos/ids/277240/luna-e-teo-cuccia-pelosa-color-rosa.jpg?v=1757251643');
 
+$product_10 = new Toy(300, 'Gioco per Cane Palla Tpr Verde', 'Lovedì', new Category('cane', 'fa-solid fa-dog' ), 10.49, 67, ['gomma TPR'], 1, 'pallina');
+$product_10->set_image('https://arcaplanet.vtexassets.com/arquivos/ids/260658/lovedi-gioco-cane-palla-con-punte-tpr-verde.jpg?v=1757207684');
+
+$product_11 = new Toy(301, 'Gioco per Cane Corda Osso', 'Trixie', new Category('cane', 'fa-solid fa-dog' ), 6.25, 0, ['cotone'], 1, 'tira e molla');
+$product_11->set_image('https://arcaplanet.vtexassets.com/arquivos/ids/223864/trixie-cane-gioco-corda.jpg?v=1757034990');
+
+$product_12 = new Toy(302, 'Gioco Topino Peluche Coda Corda', 'Camon', new Category('gatto', 'fa-solid fa-cat'), 3.10, 21, ['cotone'], 0, 'peluche');
+$product_12->set_image('https://arcaplanet.vtexassets.com/arquivos/ids/223638/camon-gatto-gioco-topino-peluche-coda-corda.jpg?v=1756298248');
 
 
-
-var_dump($product_1);
-var_dump($product_2);
-var_dump($product_3);
-var_dump($product_4);
-var_dump($product_5);
-var_dump($product_6);
-var_dump($product_7);
-var_dump($product_8);
-var_dump($product_9);
+$products = [
+  $product_1,
+  $product_2,
+  $product_3,
+  $product_4,
+  $product_5,
+  $product_6,
+  $product_7,
+  $product_8,
+  $product_9,
+  $product_10,
+  $product_11,
+  $product_12
+];
+var_dump($products);
 ?>
