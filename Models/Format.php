@@ -21,5 +21,18 @@ class Format {
     $this->heigth = $_heigth;
     $this->color = $_color;
   }
+
+  public function format_dimension() {
+    if(!is_null($this->length)) {
+      $format_array[] = $this->length;
+    }
+    if(!is_null($this->width)) {
+      $format_array[] = $this->width;
+    }
+    if(!is_null($this->heigth)) {
+      $format_array[] = $this->heigth;
+    }
+    return implode('x', $format_array);
+  }
 }
 ?>

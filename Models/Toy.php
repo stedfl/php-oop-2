@@ -3,13 +3,11 @@ class Toy extends Product {
   public $material;
   public $min_age;
   public $type;
-  public $description;
 
   /**
    * @param Array $material
    * @param Number $min_age
    * @param String $type
-   * @param String $description
    */
   public function __construct($_id, $_name, $_brand, Category $_category, $_price, $_quantity, $_material, $_min_age, $_type)
   {

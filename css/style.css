@@ -9,10 +9,11 @@ header .logo {
 }
 
 main .card {
-  height: 570px;
+  height: 600px;
 }
 
 main .card .poster {
+  display: flex;
   height: 415px;
   width: 100%;
   position: relative;
@@ -65,4 +66,34 @@ main .card-body {
 
 .price {
   text-decoration: line-through;
+}
+
+.details {
+  display: none;
+}
+
+.card:hover .poster,
+.card:hover .pricing,
+.card:hover .card-title,
+.card:hover .brand,
+.card:hover .availability {
+  display: none;
+}
+
+.card:hover .details {
+  display: block;
+}
+
+.details p {
+  text-transform: capitalize;
+}
+
+.details .age {
+  position: relative;
+}
+
+.plus {
+  position: absolute;
+  bottom: 30%;
+  font-size: 12px;
 }
