@@ -1,0 +1,51 @@
+header {
+  width: 100%;
+  height: 90px;
+  background-color: #ffd500;
+}
+
+header .logo {
+  height: 50px;
+}
+
+main .card {
+  height: 570px;
+}
+
+main .card .poster {
+  height: 415px;
+  width: 100%;
+}
+
+main .card-body {
+  background-color: #f8f8f8;
+}
+
+.brand {
+  text-transform: uppercase;
+}
+
+.available {
+  color: green;
+}
+
+.not-available {
+  color: #ce3535;
+}
+
+.final-price.not-discounted {
+  color: #666669;
+}
+
+.final-price.discounted {
+  color: #ce3535;
+}
+
+.discount {
+  background-color: #ce3535;
+  color: white;
+}
+
+.price {
+  text-decoration: line-through;
+}
