@@ -28,6 +28,10 @@ class Product {
     $this->price = $_price;
     $this->is_available = $_is_available;
   }
+
+  public function set_image($_image) {
+    $this->image = $_image;
+  }
 }
 
 ?>
